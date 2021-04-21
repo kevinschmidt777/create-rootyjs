@@ -1,0 +1,43 @@
+{
+	"name": "create-rootyjs",
+	"version": "1.0.0",
+	"description": "RootyJS CLI",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"bin": {
+		"create-rootyjs": "index.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/kevinschmidt777/create-rootyjs.git"
+	},
+	"keywords": [
+		"RootyJS"
+	],
+	"author": "Kevin Schmidt",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/kevinschmidt777/create-rootyjs/issues"
+	},
+	"homepage": "https://rootyjs.com",
+	"prettier": {
+		"printWidth": 120,
+		"tabWidth": 4,
+		"useTabs": true,
+		"semi": true,
+		"singleQuote": true,
+		"trailingComma": "es5",
+		"bracketSpacing": true,
+		"jsxBracketSameLine": false,
+		"arrowParens": "always"
+	},
+	"devDependencies": {
+		"prettier": "2.2.1"
+	},
+	"dependencies": {
+		"git-clone": "0.1.0",
+		"inquirer": "8.0.0"
+	}
+}
