@@ -1,6 +1,6 @@
 {
 	"name": "create-rootyjs",
-	"version": "0.1.0",
+	"version": "1.0.0",
 	"description": "RootyJS CLI for creating new projects easily.",
 	"main": "index.js",
 	"scripts": {
@@ -34,10 +34,10 @@
 		"arrowParens": "always"
 	},
 	"devDependencies": {
-		"prettier": "2.2.1"
+		"prettier": "2.4.1"
 	},
 	"dependencies": {
-		"git-clone": "0.1.0",
-		"inquirer": "8.0.0"
+		"git-clone": "0.2.0",
+		"inquirer": "8.2.0"
 	}
 }

@@ -15,7 +15,7 @@ const run = async () => {
 		console.log(
 			'Folder ' +
 				projectPath +
-				' already exists. Not able to generate a new RootyJS project into a existing directory.'
+				' already exists. Not able to generate a new RootyJS project into an existing directory.'
 		);
 		process.exit();
 	}
@@ -33,8 +33,8 @@ const run = async () => {
 	console.log('\x1b[36m', '✏', '\x1b[0m', 'Updating package.json values...');
 	await editPackageJson.rewrite(projectPath, settings);
 
-	// Remove .git and .idea folder from new project.
-	console.log('\x1b[36m', '✂', '\x1b[0m', 'Removing existing dev git repo...');
+	// Remove .git folder from new project.
+	console.log('\x1b[36m', '✂', '\x1b[0m', 'Removing dev git folders...');
 	await removeFolders.removeDevFolders(projectPath);
 
 	// Finished!
@@ -45,7 +45,7 @@ const run = async () => {
 		'Yay! Your new RootyJS project "' + settings.name + '" is ready for you. Happy coding!',
 		'\x1b[0m'
 	);
-	console.log('Please visit https://rootyjs.com for further informations and a detailed documentation.');
+	console.log('Please visit https://rootyjs.com for further informations and detailed documentation.');
 };
 
 run();
