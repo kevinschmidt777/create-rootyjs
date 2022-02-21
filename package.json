@@ -1,6 +1,6 @@
 {
   "name": "create-rootyjs",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "RootyJS CLI for creating new projects easily.",
   "main": "index.js",
   "scripts": {
