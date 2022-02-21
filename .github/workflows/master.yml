@@ -1,0 +1,56 @@
+name: Publish npm
+
+on:
+  # Triggers the workflow on push or pull request events but only for the master branch
+  push:
+    branches: [master]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Run tests
+        run: npm run test
+
+      - name: Save artifact
+        uses: actions/upload-artifact@master
+        with:
+          name: create-rootyjs
+          path: |
+            ./
+            !./node_modules
+            !./.git
+            !./.github
+
+  publish:
+    needs: [test]
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Get artifact
+        uses: actions/download-artifact@master
+        with:
+          name: create-rootyjs
+          path: ./
+
+      - name: Setup npm
+        uses: actions/setup-node@v2
+        with:
+          node-version: "16.x"
+          registry-url: "https://registry.npmjs.org"
+
+      - name: Npm clean install
+        run: npm ci
+
+      - name: Npm publish
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
